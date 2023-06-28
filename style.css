@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    background-color: #cecece;
+}
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.blocks {
+    width: 90%;
+    max-width: 1200px;
+    margin: 10px auto;
+}
+
+.block_item {
+    background-color: #c90000;
+    color: #fff;
+    padding: 30px;
+    border: 3px solid #fff;
+    text-align:center;
+}
+
+/* Перший приклад */
+.example_one::after,
+.example_one::before {
+    content: "";
+    display: block;
+    clear: both;
+}
+.example_one li {
+    width: 15%;
+    height: 90px;
+    margin: 5px;
+    float: left;
+}
+
+ /* Другий приклад  */
+ .example_two {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+ }
+ .example_two li {
+    width: calc(100% / 6);
+ }
+
+ /* Третій приклад  */
+ .example_three {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+ }
+
+ /* Медіазапити */
+@media screen and (max-width: 992px){
+    .example_one li {
+        width: 30%;
+    }
+    .example_two {
+        flex-wrap: wrap;
+    }
+    .example_two li {
+        width: calc(100% / 3);
+    }
+    .example_three {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .example_one li {
+        width: 45%;
+    }
+    .example_two {
+        flex-wrap: wrap;
+    }
+    .example_two li {
+        width: 50%;
+    }
+    .example_three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 540px){
+    .example_one li {
+        width: 100%;
+    }
+    .example_two {
+        flex-wrap: wrap;
+    }
+    .example_two li {
+        width: 100%;
+    }
+    .example_three {
+        grid-template-columns: 1fr;
+    }
+}
